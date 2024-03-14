@@ -13,6 +13,7 @@ public class Tank : MonoBehaviour
     }
 
     public float speed = 5f;
+    public float rotSpeed = 180f;
 
     void Update()
     {
@@ -20,5 +21,6 @@ public class Tank : MonoBehaviour
         float moveVertical = Input.GetAxis("Vertical");
 
         transform.Translate(Vector3.forward * moveVertical * speed * Time.deltaTime);
+        transform.Rotate(0, moveHorizontal * rotSpeed * Time.deltaTime, 0);
     }
 }
